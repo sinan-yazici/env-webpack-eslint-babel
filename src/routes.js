@@ -16,7 +16,7 @@ const RoutesConfig = () => (
       <Route index element={<Home />} />
       <Route path="*" element={<Error404 />} />
       <Route path="/details/:id" element={<DetailsUtilisateur />} /> {/* Route pour les détails */}
-      <Route path='/personnes' element={<ListUsers />} />
+      <Route path='/personnes' element={<ListUsers ageMin={18} order={ 'desc' }/>} />
     </Routes>
   </Router>
 );
