@@ -1,12 +1,13 @@
 import React from 'react';
-import { useParams } from 'react-router-dom'; // Import de useParams pour récupérer les paramètres d'URL
+import { useParams } from 'react-router-dom';
+import { datas } from './ListUsers';
 
-const DetailsUtilisateur = ({ users }) => {
+const DetailsUtilisateur = () => {
   const { id } = useParams(); // Récupération de l'ID de l'utilisateur depuis l'URL
-  const user = users[id]; // Récupération de l'utilisateur correspondant à l'ID
+  const user = datas[id]; // Récupération de l'utilisateur correspondant à l'ID
 
   if (!user) {
-    return <div>Aucun utilisateur trouvé.</div>; // Message si aucun utilisateur n'est trouvé
+    return <div>Aucun utilisateur trouvé.</div>;
   }
 
   const {
@@ -14,7 +15,7 @@ const DetailsUtilisateur = ({ users }) => {
     age,
     city,
     avatar
-  } = user; // Déstructuration des propriétés de l'utilisateur
+  } = user;
 
   return (
     <div className="details-utilisateur">
@@ -27,6 +28,4 @@ const DetailsUtilisateur = ({ users }) => {
   );
 };
 
-export default DetailsUtilisateur; // Ajout d'un point-virgule ici
-
-// Ajoutez une nouvelle ligne ici
+export default DetailsUtilisateur;
